@@ -130,14 +130,18 @@ ol {
 /* ---ハンバーガーメニュー---- */
 /* header（デモの参考値） */
 .demobox-header{
-	background: #cbebf7;
+	background: #fff;
 	height: 80px;
 	padding: 1em;
 	}
 	/* headerのサイト名（デモの参考値） */
 	.demobox-sitename{
-	font-weight: 700;
+	/* font-weight: 700; */
 	font-size: 24px;
+    font-family: 'M PLUS 1p', sans-serif;
+    color: #4b2d16;
+    letter-spacing: 2px;
+    margin-left: 2px;
 	}
 	/* 全体調整CSS */
 	.hamburger-demo-menubox *{
