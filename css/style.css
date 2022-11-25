@@ -2,59 +2,454 @@
 
 /*---共通設定----*/
 html {
-    font-size: 100%;
-  }
-  
-  body {
-    font-size: 16px;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  .wrapper {
-    padding: 0 4%;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  ul,
-  ol {
-    list-style-type: none;
-  }
+  font-size: 100%;
+  color: #333;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'M PLUS 1p', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.wrapper {
+  max-width: 1100px;
+  padding: 0 4%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sec-title {
+  margin-top: 20px;
+  margin-left: 15px;
+}
 
 /*---ヘッダー----*/
 
 .header-box {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  /* background-color: aquamarine; */
+  justify-content: space-between;
+  margin: 5px 0;
 }
 
 .logo-box {
     display: flex;
     align-items: center;
-    margin-top: 10px;
+    /* background-color: aliceblue; */
 }
 
 .logo {
     width: 100px;
     height: auto;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .hongochuo {
     font-size: 24px;
+    letter-spacing: 1px;
 }
 
 .gnav-list {
     display  : flex;
     font-size: 22px;
-    margin-left: 300px;
+    /* background-color: brown; */
 }
 
 .gnav-list li {
     margin: 10px;
 }
+
+header {
+  border-bottom: 5px solid #008AD5;
+}
+
+/*--- バナー ----*/
+
+.banner {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/*--- トップメッセージ ----*/
+.message {
+  background-color: #F1FEFE;
+  text-align: center;
+  padding: 40px 0;
+  line-height: 2;
+}
+
+.message p {
+  display: block;
+}
+
+/*---CLASSROOM----*/
+
+.classroom h2 {
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.class-phote {
+  max-width: 350px;
+  display: block;
+  margin: 0 auto;
+  margin: 10px auto;
+}
+
+.class-flow {
+  margin: 10px;
+}
+
+.class-flow-list {
+  margin: 10px;
+}
+
+/*--- 選ばれる理由 ----*/
+
+/* .reason h2 {
+  margin-top: 20px;
+  margin-left: 15px;
+} */
+
+.reason {
+  background-color: #FFF8FB;
+}
+
+.reason {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.reason-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.reason-box {
+  width: 45%;
+  margin: 10px;
+  /* background-color: #008AD5; */
+  /* border: #008AD5 20px solid; */
+  padding: 10px;
+  line-height: 1.5;
+  background-color:#fff;/*背景色*/
+  position:relative;
+}
+
+.reason-box:after{
+  position: absolute;
+  content: '';
+  right: 0px;
+  top: 0px;
+  border-width: 0 15px 15px 0;
+  border-style: solid;
+  border-color: #f4f4f4 #FFF8FB #f4f4f4;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+  }
+
+.reason-box:last-child {
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.reason img {
+  margin: 10px 0;
+}
+
+.reason h3 {
+  text-align: center;
+  /* border-bottom: #E62E8B 2px solid; */
+}
+
+.reason h3::after {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 2px;
+  background-color: #E62E8B;
+  margin: 0 auto;
+}
+
+.reason-box a {
+  border-bottom: 2px solid #E62E8B;
+}
+
+.reason-box a:hover{
+  color: gray;
+}
+
+/*--- 教室の様子 ----*/
+
+.classroom span {
+  font-size: 12px;
+}
+
+.classroom {
+  background-color: #FDFDE9;
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+  width:94%;
+   margin:0 auto;
+}
+
+.slider img {
+   width:100%;/*スライダー内の画像を横幅100%に*/
+   height:auto;
+}
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+
+.slider .slick-slide {
+   margin:0 10px;
+}
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+   position: absolute;/*絶対配置にする*/
+   top: 42%;
+   cursor: pointer;/*マウスカーソルを指マークに*/
+   outline: none;/*クリックをしたら出てくる枠線を消す*/
+   border-top: 2px solid #666;/*矢印の色*/
+   border-right: 2px solid #666;/*矢印の色*/
+   height: 15px;
+   width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+   left: -1.5%;
+   transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+   right: -1.5%;
+   transform: rotate(45deg);
+}
+
+/*--- アクセス ----*/
+
+.location {
+  /* background-color: #E8FBDF; */
+}
+
+.address-container {
+  padding: 0 3%;
+}
+
+address {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+iframe {
+  width: 100%;
+  height: 60vh;
+  margin-bottom: 15px;
+}
+
+/*---footer----*/
+
+.sitemap-list {
+  display: flex;
+}
+
+.sitemap-item {
+  margin: 5px;
+  color: #fff;
+}
+
+.copyright {
+  background-color: #A6C754;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  padding: 5px;
+}       
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+   text-align:center;
+ margin:20px 0 0 0;
+}
+
+.slick-dots li {
+   display:inline-block;
+ margin:0 5px;
+}
+
+.slick-dots button {
+   color: transparent;
+   outline: none;
+   width:8px;/*ドットボタンのサイズ*/
+   height:8px;/*ドットボタンのサイズ*/
+   display:block;
+   border-radius:50%;
+   background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+   background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+
+/*--- 料金案内 ----*/
+
+.fee {
+  margin: 0 auto;
+}
+
+.Sign-up-fee {
+  background-color: #f0f8ff;
+  border: 2px solid #BFC5CA;
+  border-radius: 2px;
+  width: 350px; 
+  padding: 1rem;
+}
+
+.notes {
+  display: inline-block;
+}
+
+dt {
+  background-color: #FEEEED;
+}
+
+dt,dd {
+  border-left: 1px solid #BFC5CA;
+  border-right: 1px solid #BFC5CA;
+  line-height: 2.5;
+  margin: 0 auto;
+  text-indent: 1rem;
+  border-radius: 2px;
+}
+
+dt {
+  border-bottom: 1px solid #BFC5CA;
+}
+
+dt:first-child {
+  border-top: 1px solid #BFC5CA;
+}
+
+dd {
+  border-bottom: 1px solid #BFC5CA;
+}
+
+.fee-item {
+  width: 350px;
+  margin-top: 20px;
+}
+
+.fee-item :last-child{
+  margin-bottom: 20px;
+}
+
+.flower {
+  width: 200px;
+}
+
+@media screen and (min-width:768px) {
+  .fee-item {
+    width: 700px;
+  }
+
+  dl {
+    display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+dt {
+  width: 30%;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  background-color: #DADADA;
+}
+
+dd {
+  width: 70%;
+  padding-bottom: 20px;
+  background-color: #F3F3F3;
+  margin-bottom: 10px;
+}
+
+}
+
+/*---トップへ戻るアイコン----*/
+#page_top{
+  width: 90px;
+  height: 90px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 90px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #3f98ef;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -40px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+#page_top a::after{
+  content: 'PAGE TOP';
+  font-size: 13px;
+  color: #fff;
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  color: #3f98ef;
+}
+
