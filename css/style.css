@@ -84,6 +84,182 @@ header {
   border-bottom: 5px solid #008AD5;
 }
 
+/*---ハンバーガーメニュー----*/
+/*------------------------------------
+ヘッダー a hover:下線アンダーライン ↓
+------------------------------------*/
+.gnav-sp-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+.gnav-sp-link::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #FF7BAC;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform .3s;
+}
+.gnav-sp-link:hover {
+  color: gray;
+}
+header ul li a:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+header .sp_nav {
+  text-align: center;
+}
+.sidemenu {
+  height: 100vh;
+  padding-top: 100px;
+  position: fixed;
+  right: -40%; /*メニュー幅*/
+  transition: all 0.6s;
+  top: 0;
+  width: 40%; /*メニュー幅*/
+  z-index: 2;
+  background-color: #fff;
+}
+.sidemenu nav ul li {
+  padding: 20px;
+}
+.hamburger {
+  background: #FF7BAC;
+  cursor: pointer;
+  height: 47px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 47px;
+  z-index: 3;
+  text-align: center;
+  position: fixed;
+}
+.hamburger span:nth-child(1),
+.hamburger span:nth-child(2)
+{
+  background-color: #fff;
+  height: 4px;
+  left: 5px;
+  position: absolute;
+  transition: all 0.6s;
+  width: 40px;
+}
+.hamburger_linetop {
+  top: 10px;
+}
+.hamburger_linecenter {
+  top: 20px;
+}
+.hamburger_linebottom {
+    color: #fff;
+  top: 28px;
+  font-size: 10px;
+  height: 3px;
+  left: 5px;
+  position: absolute;
+  width: 40px;
+}
+/*------------------------------------
+メニュークリックした後 ↓
+------------------------------------*/
+.nav_open .sidemenu {
+  right: 0;
+}
+.nav_open .hamburger_linetop {
+  top: 14px;
+  transform: rotate(45deg);
+}
+.nav_open .hamburger_linecenter {
+    top: 14px;
+    transform: rotate(-45deg);
+}
+
+.nav_open .hamburger_linebottom{
+    font-size: 0;
+}
+
+.nav_open .hamburger_linebottom::before{
+    top: 28px;
+    font-size: 10px;
+    content: "CLOSE";
+}
+.nav_open .overlay {
+  opacity: 0.8;
+  visibility: visible;
+}
+/*------------------------------------
+メニュークリック後メニュー外の背景 ↓
+------------------------------------*/
+.overlay {
+  background-color: #000;
+  cursor: pointer;
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  transition: all 0.6s;
+  visibility: hidden;
+  width: 100vw;
+  z-index: 1;
+}
+/*------------------------------------
+@media screen 
+------------------------------------*/
+
+.sp_nav {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .gnav {
+    padding: 0 30px;
+  }
+
+  .top-icon {
+    width: 40%;
+  }
+
+  .gnav-item {
+    font-size: 17px;
+    width: 80px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+}
+
+@media screen and (max-width: 768px) {
+.gnav-list {
+    display: none;
+}
+    .sp_nav {
+    display: inline;
+}
+.top-icon {
+  width: 70%;
+  margin:5px 5px 0 5px;
+}
+
+.logo {
+  margin: 0;
+}
+
+.gnav {
+  padding: 0 5px;
+}
+}
+
+
 /*--- バナー ----*/
 
 .banner {
