@@ -4,6 +4,7 @@
 html {
   font-size: 100%;
   color: #333;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -81,13 +82,16 @@ section {
 }
 
 header {
-  /* position: fixed;
+  position: fixed;
   z-index: 999;
   top: 0;
   left: 0;
   width: 100%;
-  box-sizing: border-box; */
-  border-bottom: 5px solid #008AD5;
+  box-sizing: border-box;
+  background-color: #FFF;
+  border-bottom: 1.5px solid #008AD5;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05); 
+
 }
 
 /*---ハンバーガーメニュー----*/
@@ -257,7 +261,7 @@ header .sp_nav {
 }
 
 .logo {
-  margin: 0;
+  margin-right: 4px;
 }
 
 .gnav {
@@ -265,12 +269,11 @@ header .sp_nav {
 }
 }
 
-
 /*--- バナー ----*/
 
 .banner {
   display: block;
-  margin-top: 8px;
+  margin-top: 80px;
   margin-bottom: 8px;
 }
 
@@ -423,6 +426,10 @@ header .sp_nav {
   color: gray;
 }
 
+.reason-text {
+  line-height: 1.8;
+}
+
 @media screen and (max-width:768px) {
   .reason-box{
     width: 90%;
@@ -496,6 +503,7 @@ header .sp_nav {
 address {
   margin-top: 5px;
   margin-bottom: 5px;
+  font-style:normal;
 }
 
 iframe {
@@ -554,6 +562,7 @@ iframe {
 
 .fee {
   margin: 0 auto;
+  margin-top: 80px;
 }
 
 .Sign-up-fee {
@@ -598,15 +607,27 @@ dd {
   margin-top: 20px;
 }
 
-.fee-item :last-child{
-  margin-bottom: 20px;
+.garden {
+  width: 100%;
+  margin-top: 20px;
+  height: 100px;
+  position: relative;
 }
 
 .flower {
   width: 200px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:1000px) {
+  .garden {
+    height: 20px;
+  }
+}
+
+@media screen and (min-width:768px) {  
   .fee-item {
     width: 700px;
   }
@@ -637,19 +658,21 @@ dd:first-of-type {
 }
 
 /*---トップへ戻るアイコン----*/
+
 #page_top{
-  width: 90px;
-  height: 90px;
+  width: 50px;
+  height: 50px;
   position: fixed;
   right: 0;
   bottom: 0;
+  background: #3f98ef;
   opacity: 0.6;
 }
 #page_top a{
   position: relative;
   display: block;
-  width: 90px;
-  height: 90px;
+  width: 50px;
+  height: 50px;
   text-decoration: none;
 }
 #page_top a::before{
@@ -657,11 +680,11 @@ dd:first-of-type {
   font-weight: 900;
   content: '\f102';
   font-size: 25px;
-  color: #3f98ef;
+  color: #fff;
   position: absolute;
   width: 25px;
   height: 25px;
-  top: -40px;
+  top: 0;
   bottom: 0;
   right: 0;
   left: 0;
@@ -669,26 +692,13 @@ dd:first-of-type {
   text-align: center;
 }
 
-#page_top a::after{
-  content: 'PAGE TOP';
-  font-size: 13px;
-  color: #fff;
-  position: absolute;
-  top: 45px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  text-align: center;
-  color: #3f98ef;
-}
 
 /*--- コンタクト ----*/
 .contact {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 80px;
   margin-bottom: 30px;
 }
 
