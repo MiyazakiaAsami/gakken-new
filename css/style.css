@@ -81,6 +81,12 @@ section {
 }
 
 header {
+  /* position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; */
   border-bottom: 5px solid #008AD5;
 }
 
@@ -287,7 +293,9 @@ header .sp_nav {
   display: block;
   right: 20px;
   bottom: 20px;
-  transform: rotate(25deg);
+  transform-origin: center bottom;
+  animation: yurayura 6s linear;
+  animation-fill-mode:forwards;
 }
 
 .gakkenkun {
@@ -296,8 +304,19 @@ header .sp_nav {
   position: absolute;
   top: 20px;
   left: 20px;
-  transform: rotate(-25deg);
+  transform-origin: center bottom;
+  animation: yurayura 6s linear;
+  animation-fill-mode:forwards;
 }
+
+@keyframes yurayura {
+  0% , 40% , 80% {
+      transform: rotate(10deg);
+  }
+  20% , 60% , 100% {
+      transform: rotate(-10deg);
+  }
+  }
 
 @media screen and (max-width:768px) {
   .message {
