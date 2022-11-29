@@ -11,7 +11,6 @@
     <!-- css -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="css/style.css">
-
     <!-- ファビコン -->
     <link rel="icon" href="gakkenkun.png">
 
@@ -20,8 +19,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;500&family=Noto+Sans+JP&display=swap" rel="stylesheet">
-
-    <!-- スライドショー -->
+    
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <!-- 教室のようすスライドショー -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" type="text/css" href="css/6-1-6.css">
     
@@ -37,7 +38,6 @@
                     <h2 class="hongochuo">本郷中央教室</h2>
                 </div><!-- logo-box -->
             </a>
-        
 
         <nav class="gnav">
             <ul class="gnav-list">
@@ -71,12 +71,22 @@
 
     </header>
     
-    <img class="banner wrapper" src="images/testbanner.png" alt="バナー">
+    <div class="swiper mySwiper wrapper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/testbanner.png" alt=""></div>
+            <div class="swiper-slide"><img src="images/testbanner.png" alt=""></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+        </div>
+
+    <!-- <img class="banner wrapper" src="images/testbanner.png" alt="バナー"> -->
 
     <main  class="wrapper">
     <section class="message">
         <img class="gakkenkun" src="images/gakkenkun.png" alt="">
-        <p>本郷中央教室は開室して２６年目になりました！<br>
+        <p>本郷中央教室は開室して26年目になりました！<br>
             教室には幼児～中学生の子供たちが通って来てくれています。<br>
             一人ひとりが自分に合った教材に取り組んでいるので、無理なく学習を進めています。<br> 
             つまずきのないお子様は、先取り学習にも取り組んでいます。<br>
@@ -99,8 +109,7 @@
              <p class="reason-text">この文章はダミーテキストです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーテキストです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーテキストです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーテキストです。文字の大きさ、量、字間、行間等を確認するために入れています。<!--学研教室では、子どもたちが自ら学び、自ら考える「自学自習」の力を身につけます。<br>
             これからの時代、子どもたちに求められることは、与えられた問題を早くこなしたり、正解を導き出したりすることだけではありません。知識をもとに試行錯誤しながら、｢自ら考える力｣を身につけることが必要です。<br>
             自分の力で考えるからこそ、どんな難しい問題にも対応できる本物の学力になるのです。学研教室では、子どもたちが自分から進んで学習に向かう｢自学自習｣の力を身につけることを目指しています。自学自習によって、自ら考え、問題を解決する力を養います。<br> -->
-            </p>
-            
+            </p>            
 
         </div>
         
@@ -126,7 +135,6 @@
         </div>
     </div><!-- reason-container -->
     </section>
-
 
     <section class="classroom">    
         <h2 class="sec-title">教室のようす</h2>
@@ -181,22 +189,16 @@
     <div id="page_top"><a href="#"></a></div>
 
     <footer>
-        <!-- <nav class="sitemap">
-            <ul class="sitemap-list">
-                <li class="sitemap-item"><a href="index.html">HOME</a></li>
-                <li class="sitemap-item"><a href="price.html">料金案内</a></li>
-                <li class="sitemap-item"><a href="contact.html">お問い合わせ</a></li>            
-            </ul>
-        </nav> -->
-
         <p><small class="copyright">&copy;学研本郷中央教室</small></p>
     </footer>
-
     
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- 教室のようすスライドショー用 -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/6-1-6.js"></script> 
+    <!--自作のJS-->
     <script src="js/script.js"></script>
-    <script src="js/6-1-6.js"></script>
-
 </body>
 </html>

@@ -269,12 +269,37 @@ header .sp_nav {
 }
 }
 
-/*--- バナー ----*/
+/*--- バナーのスライドショー ----*/
 
-.banner {
-  display: block;
+.swiper {
   margin-top: 80px;
   margin-bottom: 8px;
+  border-radius: 30px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /*--- トップメッセージ ----*/
@@ -333,29 +358,6 @@ header .sp_nav {
   }
 }
 
-/*---CLASSROOM----*/
-
-.classroom h2 {
-    margin-top: 20px;
-    margin-left: 15px;
-    margin-bottom: 10px;
-}
-
-.class-phote {
-  max-width: 350px;
-  display: block;
-  margin: 0 auto;
-  margin: 10px auto;
-}
-
-.class-flow {
-  margin: 10px;
-}
-
-.class-flow-list {
-  margin: 10px;
-}
-
 /*--- 選ばれる理由 ----*/
 
 .reason {
@@ -376,11 +378,9 @@ header .sp_nav {
 .reason-box {
   width: 45%;
   margin: 10px;
-  /* background-color: #008AD5; */
-  /* border: #008AD5 20px solid; */
   padding: 10px;
   line-height: 1.5;
-  background-color:#fff;/*背景色*/
+  background-color:#fff;
   position:relative;
 }
 
@@ -406,7 +406,6 @@ header .sp_nav {
 
 .reason h3 {
   text-align: center;
-  /* border-bottom: #E62E8B 2px solid; */
 }
 
 .reason h3::after {
@@ -419,7 +418,7 @@ header .sp_nav {
 }
 
 .reason-box a {
-  border-bottom: 2px solid #E62E8B;
+  border-bottom: 2px solid red;
 }
 
 .reason-box a:hover{
@@ -436,7 +435,7 @@ header .sp_nav {
   }
 }
 
-/*--- 教室の様子 ----*/
+/*--- 教室のようす ----*/
 
 .classroom span {
   font-size: 12px;
@@ -446,9 +445,7 @@ header .sp_nav {
   background-color: #FDFDE9;
 }
 
-/*==================================================
-スライダーのためのcss
-===================================*/
+/*スライダーのためのcss*/
 .slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
   width:94%;
    margin:0 auto;
@@ -490,6 +487,32 @@ header .sp_nav {
    transform: rotate(45deg);
 }
 
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align:center;
+margin:20px 0 0 0;
+}
+
+.slick-dots li {
+  display:inline-block;
+margin:0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width:8px;/*ドットボタンのサイズ*/
+  height:8px;/*ドットボタンのサイズ*/
+  display:block;
+  border-radius:50%;
+  background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+  background:#333;/*ドットボタンの現在地表示の色*/
+}
+
 /*--- アクセス ----*/
 
 .location {
@@ -514,15 +537,6 @@ iframe {
 
 /*---footer----*/
 
-.sitemap-list {
-  display: flex;
-}
-
-.sitemap-item {
-  margin: 5px;
-  color: #fff;
-}
-
 .copyright {
   background-color: #A6C754;
   display: flex;
@@ -530,33 +544,40 @@ iframe {
   color: #fff;
   padding: 5px;
 }       
+/*---トップへ戻るアイコン----*/
 
-/*ドットナビゲーションの設定*/
-
-.slick-dots {
-   text-align:center;
- margin:20px 0 0 0;
+#page_top{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: #3f98ef;
+  opacity: 0.6;
 }
-
-.slick-dots li {
-   display:inline-block;
- margin:0 5px;
+#page_top a{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
 }
-
-.slick-dots button {
-   color: transparent;
-   outline: none;
-   width:8px;/*ドットボタンのサイズ*/
-   height:8px;/*ドットボタンのサイズ*/
-   display:block;
-   border-radius:50%;
-   background:#ccc;/*ドットボタンの色*/
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
 }
-
-.slick-dots .slick-active button{
-   background:#333;/*ドットボタンの現在地表示の色*/
-}
-
 
 /*--- 料金案内 ----*/
 
@@ -654,44 +675,7 @@ dd {
 dd:first-of-type {
   border-top: 1px solid #BFC5CA;
 }
-
 }
-
-/*---トップへ戻るアイコン----*/
-
-#page_top{
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  background: #3f98ef;
-  opacity: 0.6;
-}
-#page_top a{
-  position: relative;
-  display: block;
-  width: 50px;
-  height: 50px;
-  text-decoration: none;
-}
-#page_top a::before{
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  content: '\f102';
-  font-size: 25px;
-  color: #fff;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  text-align: center;
-}
-
 
 /*--- コンタクト ----*/
 .contact {
