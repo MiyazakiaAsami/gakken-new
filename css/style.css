@@ -37,10 +37,12 @@ ol {
 section {
   margin-top: 20px;
   margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .sec-title {
-  margin-top: 20px;
+  margin-bottom: 20px;
   margin-left: 15px;
 }
 
@@ -682,14 +684,9 @@ dd:first-of-type {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
-  margin-top: 80px;
-  margin-bottom: 30px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .contact h2 {
-  margin-top: 30px;
   margin-bottom: 30px;
 }
 
